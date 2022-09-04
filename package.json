@@ -1,9 +1,10 @@
 {
-  "name": "xc-cli",
-  "version": "1.0.0",
+  "name": "xc317-cli",
+  "version": "1.1.0",
   "description": "一个自用的前端脚手架项目罢了",
   "main": "index.js",
   "type": "module",
+  "author":"chen_hsu",
   "bin": {
     "xc-cli": "index.js"
   },
@@ -15,7 +16,6 @@
     "url": "git+https://github.com/allenXu317/xc-cli.git"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/allenXu317/xc-cli/issues"
@@ -23,6 +23,9 @@
   "homepage": "https://github.com/allenXu317/xc-cli#readme",
   "dependencies": {
     "commander": "^9.4.0",
-    "inquirer": "^9.1.1"
+    "download-git-repo": "^3.0.2",
+    "handlebars": "^4.7.7",
+    "inquirer": "^9.1.1",
+    "ora": "^6.1.2"
   }
 }
