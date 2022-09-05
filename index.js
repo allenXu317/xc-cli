@@ -85,14 +85,6 @@ function generateTemplateFiles(url, type, name, res) {
                 fs.writeFileSync(`${dest}/webpack/webpack.config.dev.js`, result);
             }
             // 加载源代码
-            const jsPath = path.join(downloadPath, `${type}/src/js/index.js`);
-            if (fs.existsSync(configDevPath)) {
-                const content = fs.readFileSync(jsPath).toString();
-                // handlebars 模板处理引擎
-                const template = handlebars.compile(content);
-                const result = template({ ...res, name });
-                fs.writeFileSync(`${dest}/src/js/index.js`, result);
-            }
             const htmlPath = path.join(downloadPath, `${type}/src/public/index.html`);
             if (fs.existsSync(configDevPath)) {
                 const content = fs.readFileSync(htmlPath).toString();
@@ -101,21 +93,21 @@ function generateTemplateFiles(url, type, name, res) {
                 const result = template({ ...res, name });
                 fs.writeFileSync(`${dest}/src/public/index.html`, result);
             }
-            const pagesVuePath = path.join(downloadPath, `${type}/src/pages/index.vue`);
+            const pagesVuePath = path.join(downloadPath, `${type}/src/pages/index/index.vue`);
             if (fs.existsSync(configDevPath)) {
                 const content = fs.readFileSync(pagesVuePath).toString();
                 // handlebars 模板处理引擎
                 const template = handlebars.compile(content);
                 const result = template({ ...res, name });
-                fs.writeFileSync(`${dest}/src/pages/index.vue`, result);
+                fs.writeFileSync(`${dest}/src/pages/index/index.vue`, result);
             }
-            const pagesJsPath = path.join(downloadPath, `${type}/src/pages/app.js`);
+            const pagesJsPath = path.join(downloadPath, `${type}/src/pages/index/app.js`);
             if (fs.existsSync(configDevPath)) {
                 const content = fs.readFileSync(pagesJsPath).toString();
                 // handlebars 模板处理引擎
                 const template = handlebars.compile(content);
                 const result = template({ ...res, name });
-                fs.writeFileSync(`${dest}/src/pages/app.js`, result);
+                fs.writeFileSync(`${dest}/src/pages/index/app.js`, result);
             }
             // fs.rmdirSync('./tmp');
             removeDir('./tmp');
@@ -186,14 +178,21 @@ function generateCategory(name) {
             console.log('创建文件夹/src/css成功');
         }
     });
-    fs.mkdirSync(`${name}/src/js`, (err) => {
+    // fs.mkdirSync(`${name}/src/js`, (err) => {
+    //     if (err) {
+    //         console.log('创建文件夹/src/js失败');
+    //     } else {
+    //         console.log('创建文件夹/src/js成功');
+    //     }
+    // });
+    fs.mkdirSync(`${name}/src/pages`, (err) => {
         if (err) {
-            console.log('创建文件夹/src/js失败');
+            console.log('创建文件夹/src/pages失败');
         } else {
-            console.log('创建文件夹/src/js成功');
+            console.log('创建文件夹/src/pages成功');
         }
     });
-    fs.mkdirSync(`${name}/src/pages`, (err) => {
+    fs.mkdirSync(`${name}/src/pages/index`, (err) => {
         if (err) {
             console.log('创建文件夹/src/pages失败');
         } else {
