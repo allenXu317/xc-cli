@@ -4,7 +4,7 @@
 ## 下载
 `npm install xc317-cli`
 ## 初始化
-`npm init <project name>`
+`xc317-cli init <project name>`
 选择自己需要的内容
 # 更新
 ## 9/5

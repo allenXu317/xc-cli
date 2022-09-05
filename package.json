@@ -6,7 +6,7 @@
   "type": "module",
   "author":"chen_hsu",
   "bin": {
-    "xc-cli": "index.js"
+    "xc317-cli": "index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
